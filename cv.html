@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Papadimitriou.dev</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Harvard-style CV Layout */
+        .cv-wrapper {
+            max-width: 850px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 60px;
+            border-radius: 0;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+        
+        /* Header Section */
+        .cv-header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .cv-header h1 {
+            color: #000;
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .cv-contact {
+            font-size: 0.85em;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-contact a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .cv-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Headers */
+        .cv-section {
+            margin: 20px 0;
+        }
+        
+        .cv-section h2 {
+            color: #000;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1.5px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        
+        /* Content Items */
+        .cv-item {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+        
+        .cv-item-title {
+            font-weight: 700;
+            color: #000;
+            font-size: 0.95em;
+        }
+        
+        .cv-item-date {
+            font-style: italic;
+            color: #555;
+            font-size: 0.85em;
+        }
+        
+        .cv-item-subtitle {
+            color: #333;
+            font-size: 0.9em;
+            margin-bottom: 3px;
+        }
+        
+        .cv-item-description {
+            color: #444;
+            font-size: 0.88em;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+        
+        /* Skills Section */
+        .cv-skills {
+            font-size: 0.88em;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-skills strong {
+            color: #000;
+            font-weight: 600;
+        }
+        
+        /* Projects Table */
+        .cv-projects-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.85em;
+        }
+        
+        .cv-projects-table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+        
+        .cv-projects-table td:first-child {
+            font-weight: 600;
+            color: #000;
+            width: 25%;
+        }
+        
+        .cv-projects-table td:nth-child(2) {
+            width: 20%;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .cv-projects-table a {
+            color: #000;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        
+        .cv-projects-table a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Lists */
+        .cv-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .cv-list li {
+            margin-bottom: 8px;
+            font-size: 0.88em;
+            color: #333;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .cv-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Languages */
+        .cv-languages {
+            font-size: 0.88em;
+            color: #333;
+        }
+        
+        .cv-languages strong {
+            color: #000;
+            font-weight: 600;
+        }
+        
+        /* Back Buttons - Better positioned */
+        .cv-actions {
+            text-align: center;
+            margin: 30px auto 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            max-width: 850px;
+        }
+        
+        .cv-button {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.85);
+            color: #FFD700;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            margin: 0 8px;
+        }
+        
+        .cv-button:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .starfield,
+            nav,
+            .cv-actions {
+                display: none !important;
+            }
+            
+            .cv-wrapper {
+                max-width: 100%;
+                margin: 0;
+                padding: 0.5in 0.75in;
+                box-shadow: none;
+                border-radius: 0;
+                background: white;
+                page-break-after: avoid;
+            }
+            
+            .cv-section {
+                page-break-inside: avoid;
+                margin: 15px 0;
+            }
+            
+            .cv-item {
+                page-break-inside: avoid;
+                margin-bottom: 12px;
+            }
+            
+            .cv-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .cv-section h2 {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+            
+            .cv-projects-table {
+                font-size: 0.8em;
+            }
+            
+            .cv-projects-table td {
+                padding: 4px 6px;
+            }
+            
+            a {
+                color: #000 !important;
+                text-decoration: none !important;
+            }
+            
+            @page {
+                size: A4;
+                margin: 0.5in 0.75in;
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cv-wrapper {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .cv-header h1 {
+                font-size: 1.6em;
+            }
+            
+            .cv-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cv-item-date {
+                margin-top: 2px;
+            }
+            
+            .cv-projects-table {
+                font-size: 0.8em;
+            }
+            
+            .cv-projects-table td:first-child {
+                width: 30%;
+            }
+            
+            .cv-actions {
+                margin: 20px auto 15px;
+            }
+            
+            .cv-button {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cv-wrapper {
+                padding: 20px 15px;
+                margin: 5px;
+            }
+            
+            .cv-header h1 {
+                font-size: 1.4em;
+            }
+            
+            .cv-section h2 {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="starfield"></div>
+    
+    <nav>
+        <h2>Papadimitriou.dev</h2>
+    </nav>
+    
+    <div class="cv-wrapper">
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>PANAGIOTIS PAPADIMITRIOU</h1>
+            <div class="cv-contact">
+                Athens, Greece | +30 6940601736 | panospdm24@icloud.com<br>
+                <a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> | 
+                <a href="https://github.com/papadimitrioudev">github.com/papadimitrioudev</a>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+            <h2>Education</h2>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Mediterranean College / University of Derby</span>
+                    <span class="cv-item-date">July 2024</span>
+                </div>
+                <div class="cv-item-subtitle">BSc Computer Science</div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Postgraduate Studies – Big Data</span>
+                    <span class="cv-item-date">In Progress</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="cv-section">
+            <h2>Experience</h2>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">80ADTE – Kos, Research & IT Soldier</span>
+                    <span class="cv-item-date">Sep 2024 – May 2025</span>
+                </div>
+                <div class="cv-item-description">
+                    Technical support & network management
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <span class="cv-item-title">Web Frontend Developer</span>
+                    <span class="cv-item-date">Personal Projects</span>
+                </div>
+                <div class="cv-item-description">
+                    Development of responsive websites using modern web development practices
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="cv-section">
+            <h2>Projects</h2>
+            <table class="cv-projects-table">
+                <tr>
+                    <td>Personal Site</td>
+                    <td>HTML, CSS, JS</td>
+                    <td><a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> – Personal portfolio website showcasing projects</td>
+                </tr>
+                <tr>
+                    <td>Storm Haven</td>
+                    <td>HTML, CSS, JS</td>
+                    <td><a href="https://stormhaven.netlify.app">stormhaven.netlify.app</a> – Weather application with live data, bilingual support (Greek/English) and responsive design</td>
+                </tr>
+                <tr>
+                    <td>Galactic Run</td>
+                    <td>Unity, C#</td>
+                    <td><a href="https://play.unity.com/en/games/d9b66d7a-0bc1-49bf-b8d9-fb322080a892/buildweb">Unity Play</a> – Endless runner with procedural generation – Available on WebGL</td>
+                </tr>
+                <tr>
+                    <td>Reading Marathon</td>
+                    <td>Node.js, Socket.IO</td>
+                    <td><a href="https://reading-marathon.onrender.com">reading-marathon.onrender.com</a> – Real-time leaderboard system for school events with WebSocket technology</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-section">
+            <h2>Technical Skills</h2>
+            <div class="cv-skills">
+                <strong>Programming:</strong> Python, JavaScript, C#<br>
+                <strong>Web Development:</strong> HTML, CSS, Responsive Design, Node.js, Express<br>
+                <strong>Tools & Technologies:</strong> Unity, Git, Linux, Socket.IO, Real-time Systems
+            </div>
+        </div>
+
+        <!-- Activities -->
+        <div class="cv-section">
+            <h2>Activities</h2>
+            <ul class="cv-list">
+                <li><strong>EF Global Youth Leadership Summit</strong> – Berlin, 2023</li>
+                <li><strong>Teens Debate Program</strong> – Athens, 2019</li>
+            </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section">
+            <h2>Languages</h2>
+            <div class="cv-languages">
+                <strong>Greek</strong> (Native), <strong>English</strong> (B2), <strong>Italian</strong> (B1)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Action Buttons - Better positioned -->
+    <div class="cv-actions">
+        <a href="about.html" class="cv-button">Back to About</a>
+        <a href="index.html" class="cv-button">Back to Home</a>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

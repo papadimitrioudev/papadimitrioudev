@@ -1,0 +1,618 @@
+/* ===== PORTFOLIO STYLES - OPTIMIZED & COMMENTED ===== */
+/* Developer: Panagiotis Papadimitriou */
+/* Version: 2.1 - Mobile Optimized */
+
+/* ===== CSS VARIABLES FOR CONSISTENT THEMING ===== */
+:root {
+    --text-bright: rgba(255, 255, 255, 0.95);
+    --text-normal: rgba(255, 255, 255, 0.85);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --gold: #FFD700;
+    --gold-light: rgba(255, 215, 0, 0.2);
+    --container-max-width: 800px;
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* ===== BODY & MAIN LAYOUT ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-bright);
+    min-height: 100vh;
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-x: hidden;
+    background: #000000;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-light);
+    backdrop-filter: blur(10px);
+}
+
+nav h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+/* ===== MAIN CONTENT CONTAINER ===== */
+.container {
+    max-width: min(var(--container-max-width), 92%);
+    margin: 40px auto;
+    padding: clamp(25px, 4vw, 50px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+h1 {
+    color: var(--text-bright);
+    margin-top: 0;
+    font-weight: 700;
+    font-size: clamp(2.3em, 5vw, 3em);
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+}
+
+h2 {
+    color: var(--text-bright);
+    font-weight: 600;
+    font-size: clamp(1.7em, 4vw, 2em);
+    margin: 30px 0 20px 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+p {
+    color: var(--text-normal);
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ===== ONGOING BADGE STYLE ===== */
+.ongoing-badge {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--gold);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-left: 10px;
+    border: 1px solid var(--gold-light);
+}
+
+/* ===== BUTTON STYLES ===== */
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-bright);
+    padding: 16px 40px;
+    text-decoration: none;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 260px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.button:hover,
+.button:active {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.button:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.button-secondary:hover,
+.button-secondary:active {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--gold);
+}
+
+/* ===== SOCIAL MEDIA BUTTONS ===== */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 40px 0 20px 0;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-bright);
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 140px;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.contact-btn:hover,
+.contact-btn:active {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--gold);
+    transform: translateY(-2px);
+}
+
+.contact-btn:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.contact-icon {
+    font-size: 1.2em;
+}
+
+.contact-text {
+    font-weight: 500;
+}
+
+/* ===== PROJECTS SECTION STYLES ===== */
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 35px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 18px auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 500px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.project-item:hover,
+.project-item:active {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-title {
+    color: var(--text-bright);
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: -0.2px;
+}
+
+.project-description {
+    color: var(--text-normal);
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 8px 0 0 0;
+}
+
+.project-tech {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets and small screens */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 20px 15px;
+        max-width: 95%;
+    }
+    
+    nav {
+        padding: 1rem 1.5rem;
+    }
+    
+    nav h2 {
+        font-size: 1.2rem;
+    }
+    
+    .button {
+        padding: 14px 30px;
+        min-width: 220px;
+        font-size: 1em;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-btn {
+        min-width: 180px;
+        padding: 12px 20px;
+    }
+    
+    .project-item {
+        padding: 18px;
+        margin: 12px auto;
+        max-width: 95%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px auto;
+        padding: 18px 12px;
+        border-radius: 16px;
+        max-width: 96%;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    
+    p {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    
+    .button {
+        min-width: 200px;
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+    
+    .contact-btn {
+        min-width: 160px;
+        padding: 10px 16px;
+    }
+    
+    .project-item {
+        padding: 16px;
+        margin: 10px auto;
+    }
+    
+    .project-title {
+        font-size: 1.1em;
+    }
+    
+    .project-description {
+        font-size: 0.9em;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .container {
+        margin: 8px auto;
+        padding: 15px 10px;
+        max-width: 98%;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    .button {
+        min-width: 180px;
+        padding: 10px 18px;
+        font-size: 0.9em;
+    }
+    
+    .center-buttons {
+        margin: 25px 0;
+    }
+    
+    .contact-buttons {
+        margin: 30px 0 15px 0;
+    }
+}
+
+/* Large screens and ultrawide monitors */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 900px;
+        margin: 60px auto;
+    }
+}
+
+/* ===== MOBILE-SPECIFIC FIXES ===== */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px auto;
+        padding: 25px 15px;
+        max-width: 94%;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .button:active,
+    .contact-btn:active,
+    .project-item:active {
+        background: rgba(255, 215, 0, 0.15) !important;
+        border: 1px solid var(--gold) !important;
+        transform: scale(0.98) !important;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
+    }
+    
+    .button:hover:active,
+    .contact-btn:hover:active,
+    .project-item:hover:active {
+        background: rgba(255, 215, 0, 0.2) !important;
+        transform: scale(0.96) !important;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+    .container {
+        margin: 8px auto;
+        padding: 20px 12px;
+        max-width: 96%;
+        min-height: 88vh;
+        border-radius: 18px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    
+    .center-buttons {
+        margin: 30px 0;
+        gap: 12px;
+    }
+    
+    .contact-buttons {
+        margin: 35px 0 20px 0;
+        gap: 10px;
+    }
+}
+
+/* Mobile-specific tap animations */
+@media (hover: none) and (pointer: coarse) {
+    .button,
+    .contact-btn,
+    .project-item {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .button:active,
+    .contact-btn:active,
+    .project-item:active {
+        background: rgba(255, 215, 0, 0.2);
+        border-color: var(--gold);
+        transform: scale(0.95);
+        box-shadow: 
+            0 0 0 3px rgba(255, 215, 0, 0.1),
+            0 8px 25px rgba(255, 215, 0, 0.25);
+    }
+}
+
+/* Improve mobile navigation appearance */
+@media (max-width: 768px) {
+    nav {
+        padding: 1.2rem 1.5rem;
+        background: rgba(0, 0, 0, 0.95);
+    }
+    
+    nav h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Better mobile project items */
+@media (max-width: 480px) {
+    .project-item {
+        padding: 20px 15px;
+        margin: 15px auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.25s ease;
+    }
+    
+    .project-item:active {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid var(--gold);
+        transform: translateY(-2px) scale(0.98);
+        box-shadow: 
+            0 5px 15px rgba(255, 215, 0, 0.2),
+            0 0 0 2px rgba(255, 215, 0, 0.1);
+    }
+}
+
+/* ===== ENHANCED MOBILE ANIMATIONS ===== */
+@media (max-width: 480px) {
+    .button,
+    .contact-btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .button:active::after,
+    .contact-btn:active::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        border-radius: inherit;
+        animation: mobileRipple 0.6s ease-out;
+    }
+    
+    @keyframes mobileRipple {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0;
+        }
+    }
+    
+    .project-item:active {
+        background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+        border: 1px solid var(--gold);
+        transform: translateY(-3px) scale(0.98);
+        box-shadow: 
+            0 8px 25px rgba(255, 215, 0, 0.25),
+            0 0 0 3px rgba(255, 215, 0, 0.1);
+    }
+}
+
+/* ===== DYNAMIC STARFIELD BACKGROUND ===== */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(-45deg, #000000, #0a0a2a, #1a1a3a, #000000);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+    opacity: 0.6;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+    opacity: 1;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container, nav {
+    position: relative;
+    z-index: 1;
+}
