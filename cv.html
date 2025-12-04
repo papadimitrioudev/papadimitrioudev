@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Papadimitriou.dev</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <style>
         /* Harvard-style CV Layout */
@@ -16,7 +18,7 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
             color: #000;
         }
-        
+
         /* Header Section */
         .cv-header {
             text-align: center;
@@ -24,7 +26,7 @@
             padding-bottom: 15px;
             margin-bottom: 25px;
         }
-        
+
         .cv-header h1 {
             color: #000;
             font-size: 2em;
@@ -32,27 +34,27 @@
             margin: 0 0 8px 0;
             letter-spacing: 0.5px;
         }
-        
+
         .cv-contact {
             font-size: 0.85em;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .cv-contact a {
             color: #000;
             text-decoration: none;
         }
-        
+
         .cv-contact a:hover {
             text-decoration: underline;
         }
-        
+
         /* Section Headers */
         .cv-section {
             margin: 20px 0;
         }
-        
+
         .cv-section h2 {
             color: #000;
             font-size: 1.1em;
@@ -64,57 +66,57 @@
             margin-bottom: 12px;
             text-align: left;
         }
-        
+
         /* Content Items */
         .cv-item {
             margin-bottom: 15px;
             line-height: 1.5;
         }
-        
+
         .cv-item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 3px;
         }
-        
+
         .cv-item-title {
             font-weight: 700;
             color: #000;
             font-size: 0.95em;
         }
-        
+
         .cv-item-date {
             font-style: italic;
             color: #555;
             font-size: 0.85em;
         }
-        
+
         .cv-item-subtitle {
             color: #333;
             font-size: 0.9em;
             margin-bottom: 3px;
         }
-        
+
         .cv-item-description {
             color: #444;
             font-size: 0.88em;
             margin-top: 4px;
             line-height: 1.4;
         }
-        
+
         /* Skills Section */
         .cv-skills {
             font-size: 0.88em;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .cv-skills strong {
             color: #000;
             font-weight: 600;
         }
-        
+
         /* Projects Table */
         .cv-projects-table {
             width: 100%;
@@ -122,43 +124,43 @@
             margin-top: 8px;
             font-size: 0.85em;
         }
-        
+
         .cv-projects-table td {
             padding: 6px 8px;
             vertical-align: top;
             border-bottom: 1px solid #ddd;
             color: #333;
         }
-        
+
         .cv-projects-table td:first-child {
             font-weight: 600;
             color: #000;
             width: 25%;
         }
-        
+
         .cv-projects-table td:nth-child(2) {
             width: 20%;
             font-style: italic;
             color: #555;
         }
-        
+
         .cv-projects-table a {
             color: #000;
             text-decoration: none;
             word-break: break-word;
         }
-        
+
         .cv-projects-table a:hover {
             text-decoration: underline;
         }
-        
+
         /* Lists */
         .cv-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .cv-list li {
             margin-bottom: 8px;
             font-size: 0.88em;
@@ -166,7 +168,7 @@
             padding-left: 15px;
             position: relative;
         }
-        
+
         .cv-list li:before {
             content: "•";
             position: absolute;
@@ -174,18 +176,18 @@
             color: #000;
             font-weight: bold;
         }
-        
+
         /* Languages */
         .cv-languages {
             font-size: 0.88em;
             color: #333;
         }
-        
+
         .cv-languages strong {
             color: #000;
             font-weight: 600;
         }
-        
+
         /* Back Buttons - Better positioned */
         .cv-actions {
             text-align: center;
@@ -194,7 +196,7 @@
             border-top: 2px solid #ddd;
             max-width: 850px;
         }
-        
+
         .cv-button {
             display: inline-block;
             background: rgba(0, 0, 0, 0.85);
@@ -208,14 +210,27 @@
             border: 1px solid rgba(255, 215, 0, 0.3);
             margin: 0 8px;
         }
-        
+
         .cv-button:hover {
             background: rgba(0, 0, 0, 0.95);
             border: 1px solid #FFD700;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
-        
+
+        .cv-button-primary {
+            background: #FFD700;
+            color: #000;
+            font-weight: 700;
+            border: 1px solid #FFD700;
+            cursor: pointer;
+        }
+
+        .cv-button-primary:hover {
+            background: #FFC700;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
         /* Print Styles */
         @media print {
             body {
@@ -223,130 +238,159 @@
                 margin: 0;
                 padding: 0;
             }
-            
+
             .starfield,
             nav,
             .cv-actions {
                 display: none !important;
             }
-            
+
             .cv-wrapper {
                 max-width: 100%;
                 margin: 0;
-                padding: 0.5in 0.75in;
+                padding: 0.2in 0.35in;
                 box-shadow: none;
                 border-radius: 0;
                 background: white;
                 page-break-after: avoid;
             }
-            
+
             .cv-section {
                 page-break-inside: avoid;
-                margin: 15px 0;
+                margin: 4px 0;
             }
-            
+
             .cv-item {
                 page-break-inside: avoid;
-                margin-bottom: 12px;
+                margin-bottom: 4px;
+                line-height: 1.3;
             }
-            
+
+            .cv-header {
+                padding-bottom: 5px;
+                margin-bottom: 8px;
+            }
+
             .cv-header h1 {
-                font-size: 1.8em;
+                font-size: 1.2em;
+                margin-bottom: 2px;
             }
-            
+
+            .cv-contact {
+                font-size: 0.7em;
+                line-height: 1.3;
+            }
+
             .cv-section h2 {
-                font-size: 1em;
-                margin-bottom: 10px;
+                font-size: 0.8em;
+                margin-bottom: 3px;
+                padding-bottom: 1px;
             }
-            
+
             .cv-projects-table {
+                font-size: 0.6em;
+                line-height: 1.2;
+            }
+
+            .cv-projects-table td {
+                padding: 1px 3px;
+            }
+
+            .cv-skills {
+                font-size: 0.75em;
+                line-height: 1.3;
+            }
+
+            .cv-list li {
+                margin-bottom: 2px;
                 font-size: 0.8em;
             }
-            
-            .cv-projects-table td {
-                padding: 4px 6px;
+
+            .cv-languages {
+                font-size: 0.75em;
             }
-            
+
             a {
                 color: #000 !important;
                 text-decoration: none !important;
             }
-            
+
             @page {
                 size: A4;
-                margin: 0.5in 0.75in;
+                margin: 0.25in 0.35in;
             }
         }
-        
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .cv-wrapper {
                 padding: 30px 20px;
                 margin: 10px;
             }
-            
+
             .cv-header h1 {
                 font-size: 1.6em;
             }
-            
+
             .cv-item-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .cv-item-date {
                 margin-top: 2px;
             }
-            
+
             .cv-projects-table {
                 font-size: 0.8em;
             }
-            
+
             .cv-projects-table td:first-child {
                 width: 30%;
             }
-            
+
             .cv-actions {
                 margin: 20px auto 15px;
             }
-            
+
             .cv-button {
                 display: block;
                 margin: 10px auto;
                 max-width: 200px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .cv-wrapper {
                 padding: 20px 15px;
                 margin: 5px;
             }
-            
+
             .cv-header h1 {
                 font-size: 1.4em;
             }
-            
+
             .cv-section h2 {
                 font-size: 0.95em;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="starfield"></div>
-    
+
     <nav>
         <h2>Papadimitriou.dev</h2>
     </nav>
-    
+
     <div class="cv-wrapper">
         <!-- Header -->
         <div class="cv-header">
             <h1>PANAGIOTIS PAPADIMITRIOU</h1>
             <div class="cv-contact">
                 Athens, Greece | +30 6940601736 | panospdm24@icloud.com<br>
-                <a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> | 
+                <a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> |
                 <a href="https://github.com/papadimitrioudev">github.com/papadimitrioudev</a>
             </div>
         </div>
@@ -399,22 +443,26 @@
                 <tr>
                     <td>Personal Site</td>
                     <td>HTML, CSS, JS</td>
-                    <td><a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> – Personal portfolio website showcasing projects</td>
+                    <td><a href="https://papadimitrioudev.netlify.app">papadimitrioudev.netlify.app</a> – Personal
+                        portfolio website showcasing projects</td>
                 </tr>
                 <tr>
                     <td>Storm Haven</td>
                     <td>HTML, CSS, JS</td>
-                    <td><a href="https://stormhaven.netlify.app">stormhaven.netlify.app</a> – Weather application with live data, bilingual support (Greek/English) and responsive design</td>
+                    <td><a href="https://stormhaven.netlify.app">stormhaven.netlify.app</a> – Weather application with
+                        live data, bilingual support (Greek/English) and responsive design</td>
                 </tr>
                 <tr>
                     <td>Galactic Run</td>
                     <td>Unity, C#</td>
-                    <td><a href="https://play.unity.com/en/games/d9b66d7a-0bc1-49bf-b8d9-fb322080a892/buildweb">Unity Play</a> – Endless runner with procedural generation – Available on WebGL</td>
+                    <td><a href="https://play.unity.com/en/games/d9b66d7a-0bc1-49bf-b8d9-fb322080a892/buildweb">Unity
+                            Play</a> – Endless runner with procedural generation – Available on WebGL</td>
                 </tr>
                 <tr>
                     <td>Reading Marathon</td>
                     <td>Node.js, Socket.IO</td>
-                    <td><a href="https://reading-marathon.onrender.com">reading-marathon.onrender.com</a> – Real-time leaderboard system for school events with WebSocket technology</td>
+                    <td><a href="https://reading-marathon.onrender.com">reading-marathon.onrender.com</a> – Real-time
+                        leaderboard system for school events with WebSocket technology</td>
                 </tr>
             </table>
         </div>
@@ -446,13 +494,15 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Action Buttons - Better positioned -->
     <div class="cv-actions">
+        <button onclick="window.print()" class="cv-button cv-button-primary">📥 Download as PDF</button>
         <a href="about.html" class="cv-button">Back to About</a>
         <a href="index.html" class="cv-button">Back to Home</a>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -57,6 +57,20 @@ nav h2 {
     letter-spacing: -0.2px;
 }
 
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
 /* ===== MAIN CONTENT CONTAINER ===== */
 .container {
     max-width: min(var(--container-max-width), 92%);
@@ -284,31 +298,31 @@ p {
         padding: 20px 15px;
         max-width: 95%;
     }
-    
+
     nav {
         padding: 1rem 1.5rem;
     }
-    
+
     nav h2 {
         font-size: 1.2rem;
     }
-    
+
     .button {
         padding: 14px 30px;
         min-width: 220px;
         font-size: 1em;
     }
-    
+
     .contact-buttons {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .contact-btn {
         min-width: 180px;
         padding: 12px 20px;
     }
-    
+
     .project-item {
         padding: 18px;
         margin: 12px auto;
@@ -324,37 +338,37 @@ p {
         border-radius: 16px;
         max-width: 96%;
     }
-    
+
     h1 {
         font-size: 1.8em;
         margin-bottom: 15px;
     }
-    
+
     p {
         font-size: 1em;
         margin-bottom: 15px;
     }
-    
+
     .button {
         min-width: 200px;
         padding: 12px 20px;
         font-size: 0.95em;
     }
-    
+
     .contact-btn {
         min-width: 160px;
         padding: 10px 16px;
     }
-    
+
     .project-item {
         padding: 16px;
         margin: 10px auto;
     }
-    
+
     .project-title {
         font-size: 1.1em;
     }
-    
+
     .project-description {
         font-size: 0.9em;
     }
@@ -367,21 +381,21 @@ p {
         padding: 15px 10px;
         max-width: 98%;
     }
-    
+
     h1 {
         font-size: 1.6em;
     }
-    
+
     .button {
         min-width: 180px;
         padding: 10px 18px;
         font-size: 0.9em;
     }
-    
+
     .center-buttons {
         margin: 25px 0;
     }
-    
+
     .contact-buttons {
         margin: 30px 0 15px 0;
     }
@@ -406,7 +420,7 @@ p {
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .button:active,
     .contact-btn:active,
     .project-item:active {
@@ -415,7 +429,7 @@ p {
         transform: scale(0.98) !important;
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
     }
-    
+
     .button:hover:active,
     .contact-btn:hover:active,
     .project-item:hover:active {
@@ -433,17 +447,17 @@ p {
         min-height: 88vh;
         border-radius: 18px;
     }
-    
+
     h1 {
         font-size: 1.8em;
         margin-bottom: 20px;
     }
-    
+
     .center-buttons {
         margin: 30px 0;
         gap: 12px;
     }
-    
+
     .contact-buttons {
         margin: 35px 0 20px 0;
         gap: 10px;
@@ -452,19 +466,20 @@ p {
 
 /* Mobile-specific tap animations */
 @media (hover: none) and (pointer: coarse) {
+
     .button,
     .contact-btn,
     .project-item {
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .button:active,
     .contact-btn:active,
     .project-item:active {
         background: rgba(255, 215, 0, 0.2);
         border-color: var(--gold);
         transform: scale(0.95);
-        box-shadow: 
+        box-shadow:
             0 0 0 3px rgba(255, 215, 0, 0.1),
             0 8px 25px rgba(255, 215, 0, 0.25);
     }
@@ -476,7 +491,7 @@ p {
         padding: 1.2rem 1.5rem;
         background: rgba(0, 0, 0, 0.95);
     }
-    
+
     nav h2 {
         font-size: 1.3rem;
     }
@@ -490,12 +505,12 @@ p {
         border: 1px solid rgba(255, 255, 255, 0.2);
         transition: all 0.25s ease;
     }
-    
+
     .project-item:active {
         background: rgba(255, 215, 0, 0.1);
         border: 1px solid var(--gold);
         transform: translateY(-2px) scale(0.98);
-        box-shadow: 
+        box-shadow:
             0 5px 15px rgba(255, 215, 0, 0.2),
             0 0 0 2px rgba(255, 215, 0, 0.1);
     }
@@ -503,12 +518,13 @@ p {
 
 /* ===== ENHANCED MOBILE ANIMATIONS ===== */
 @media (max-width: 480px) {
+
     .button,
     .contact-btn {
         position: relative;
         overflow: hidden;
     }
-    
+
     .button:active::after,
     .contact-btn:active::after {
         content: '';
@@ -517,29 +533,30 @@ p {
         left: 50%;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         border-radius: inherit;
         animation: mobileRipple 0.6s ease-out;
     }
-    
+
     @keyframes mobileRipple {
         0% {
             transform: translate(-50%, -50%) scale(0);
             opacity: 0.5;
         }
+
         100% {
             transform: translate(-50%, -50%) scale(2);
             opacity: 0;
         }
     }
-    
+
     .project-item:active {
-        background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
         border: 1px solid var(--gold);
         transform: translateY(-3px) scale(0.98);
-        box-shadow: 
+        box-shadow:
             0 8px 25px rgba(255, 215, 0, 0.25),
             0 0 0 3px rgba(255, 215, 0, 0.1);
     }
@@ -590,10 +607,13 @@ body {
 }
 
 @keyframes twinkle {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.3;
         transform: scale(1);
     }
+
     50% {
         opacity: 1;
         transform: scale(1.2);
@@ -604,15 +624,18 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
-.container, nav {
+.container,
+nav {
     position: relative;
     z-index: 1;
 }
